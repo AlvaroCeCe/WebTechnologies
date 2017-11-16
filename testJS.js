@@ -27,12 +27,15 @@ function checkForm(){
      */
     var name = form["name"].value;
     var age = form["age"].value;
+    var email = form["email"].value;
     var gender = form["gender"].value;
 
     result.innerHTML="";
     form["name"].classList.remove("invalid");
+    form["email"].classList.remove("invalid");
     form["age"].classList.remove("invalid");
     document.getElementById("nameTD").classList.remove("invalid");
+    document.getElementById("emailTD").classList.remove("invalid");
     document.getElementById("ageTD").classList.remove("invalid");
     document.getElementById("genderTD").classList.remove("invalid");
 
@@ -42,6 +45,12 @@ function checkForm(){
         document.getElementById("nameTD").classList.add("invalid");
         ok = false;
         result.innerHTML+=("Name can't be empty<br>");
+    }
+    if(!ValidateEmail(email)){
+        form["email"].classList.add("invalid");
+        document.getElementById("emailTD").classList.add("invalid");
+        ok = false;
+        result.innerHTML+=("Email can't be empty or must be valid<br>");
     }
     if(age < 18){
         document.getElementById("ageTD").classList.add("invalid");
@@ -81,3 +90,12 @@ function checkForm(){
             }
         });
 }}) ;
+
+function ValidateEmail(mail)
+{
+    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail))
+    {
+        return (true)
+    }else{
+    return (false)}
+}
