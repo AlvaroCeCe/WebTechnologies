@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Web <technologies></technologies></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript"></script>
+    <script src="testJS.js"></script>
+
+    <style>
+        .invalid{ color: red}
+    </style>
+
+    <script>
+        jQuery(function (){
+            ShowHello = function(){
+                window.alert("Hello my friend")
+            }
+        })
+
+        jQuery(function (){
+            $("#clickMe").click(function(){
+                $(this).hide()
+            })
+        })
+
+        jQuery(function(){
+            Refresh = function(){
+                location.reload();
+            }
+        })
+
+
+    </script>
+
+
+</head>
+<body>
+<h1>
+    Web Technologies
+</h1>
+
+<ul id="horizontal">
+    <li onclick="Refresh()">Home</li>
+    <li>Random item</li>
+    <li id="clickMe">Click me!</li>
+    <li>Contact</li>
+</ul>
+
+<ul id="vertical">
+    <li>Item 1</li>
+    <li><button type="button" onclick="ShowHello()" >Say Hello</button> </li>
+    <li><button type="button" onclick="readJSON()" >Read JSON</button> </li>
+</ul>
+
+<div id="content">
+    <h2>Form</h2>
+    <table>
+        <form id="form" method="post">
+    <td>
+        <tr id="nameRow">
+            <td id="nameTD">Full Name:</td>
+            <td><input name="name" type="text" required placeholder="First Name"/><br/>
+            </td>
+        </tr>
+        <tr>
+            <td id="ageTD">Age:</td>
+            <td><input name="age" type="number" required placeholder="Age"/><br/>
+            </td>
+        </tr>
+        <tr>
+            <td id="genderTD">Gender:</td>
+            <td> <input name="gender" type="radio" value="MALE">Male</input>
+                <input name="gender" type="radio" value="FEMALE">Female</input> <br/></td>
+        </tr>
+        <tr><td><input type="button" onclick="checkForm()" value="Submit" /></td></tr>
+    </td></form>
+    </table>
+    <p id="result"></p>
+    <div id="tableDiv"></div>
+
+</div>
+
+
+<p id="footer"> Copyright © - Alvaro Carnicero Clavijo</p>
+
+</body>
+
+
+</html>
